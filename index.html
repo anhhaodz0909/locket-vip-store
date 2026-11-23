@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCKET VIP STORE | Nâng Cấp Locket Gold Chính Chủ - ANH HAO MEDIA</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- QRCode.js Fallback Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#070709',
+                        surface: '#101015',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #070709;
+            color: #F4F4F6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Luxury Grid Background */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        }
+
+        /* Glassmorphism Panels */
+        .glass {
+            background: rgba(18, 18, 24, 0.72);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-strong {
+            background: rgba(14, 14, 19, 0.92);
+            backdrop-filter: blur(28px);
+            -webkit-backdrop-filter: blur(28px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        /* Gold Metallic Text Gradient */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #FFF3B0 0%, #FBBF24 45%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Premium Gold Button */
+        .btn-gold {
+            background: linear-gradient(135deg, #FDE047 0%, #F59E0B 50%, #D97706 100%);
+            color: #09090B;
+            font-weight: 800;
+            box-shadow: 0 10px 30px -8px rgba(245, 158, 11, 0.5);
+            transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px -6px rgba(245, 158, 11, 0.7);
+            filter: brightness(1.06);
+        }
+        .btn-gold:active {
+            transform: translateY(0px);
+        }
+
+        /* Animated Gold Border for Best Seller Card */
+        .card-vip-glow {
+            position: relative;
+            background: linear-gradient(180deg, rgba(245, 158, 11, 0.09) 0%, rgba(16, 16, 22, 0.95) 100%);
+            border: 1px solid rgba(251, 191, 36, 0.45);
+            box-shadow: 0 24px 60px -15px rgba(245, 158, 11, 0.18);
+        }
+
+        /* 3D Card Interactive Shine */
+        .vip-card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.15s ease-out;
+            background: linear-gradient(135deg, #1E1B18 0%, #0E0D0C 48%, #271E12 100%);
+            border: 1px solid rgba(251, 191, 36, 0.38);
+            box-shadow: 0 30px 70px -15px rgba(0, 0, 0, 0.85), 0 0 40px rgba(245, 158, 11, 0.14);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070709;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272A;
+            border-radius: 999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B;
+        }
+    </style>
+</head>
+<body class="bg-grid-pattern min-h-screen flex flex-col selection:bg-amber-500 selection:text-black">
+
+    <!-- Ambient Background Glow Orbs -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute -top-40 -left-32 w-[520px] h-[520px] bg-amber-500/10 rounded-full blur-[140px]"></div>
+        <div class="absolute top-1/3 -right-40 w-[480px] h-[480px] bg-purple-600/10 rounded-full blur-[150px]"></div>
+        <div class="absolute bottom-0 left-1/3 w-[440px] h-[440px] bg-amber-400/5 rounded-full blur-[130px]"></div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed top-20 right-4 z-[90] flex flex-col gap-2.5 max-w-sm w-full pointer-events-none"></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="sticky top-0 z-50 glass-strong border-b border-white/[0.08]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-4">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group shrink-0">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 p-[1.5px] shadow-lg shadow-amber-500/25 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-[#0C0C0F] rounded-[14px] flex items-center justify-center">
+                        <i data-lucide="crown" class="w-5 h-5 text-amber-400 fill-amber-400/20"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-extrabold text-base sm:text-lg tracking-tight text-white">LOCKET</span>
+                        <span class="font-extrabold text-base sm:text-lg tracking-tight text-gold-gradient">VIP</span>
+                        <span class="hidden sm:inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30">OFFICIAL</span>
+                    </div>
+                    <p class="text-[10px] font-semibold tracking-widest text-zinc-400 uppercase">ANH HAO MEDIA</p>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-zinc-300">
+                <a href="#packages" class="hover:text-amber-400 transition-colors">Bảng Giá Gói VIP</a>
+                <a href="#features" class="hover:text-amber-400 transition-colors">Đặc Quyền Gold</a>
+                <a href="#how-it-works" class="hover:text-amber-400 transition-colors">Quy Trình 30s</a>
+                <a href="#compare" class="hover:text-amber-400 transition-colors">So Sánh</a>
+                <a href="#faq" class="hover:text-amber-400 transition-colors">Hỏi Đáp</a>
+            </nav>
+
+            <!-- Action Controls -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Order History Button -->
+                <button onclick="openOrdersModal()" class="relative px-3 sm:px-3.5 py-2.5 rounded-xl glass hover:border-amber-500/40 text-xs sm:text-sm font-semibold text-zinc-200 flex items-center gap-2 transition-all">
+                    <i data-lucide="receipt-text" class="w-4 h-4 text-amber-400"></i>
+                    <span class="hidden md:inline">Đơn Hàng</span>
+                    <span id="order-badge" class="hidden px-1.5 py-0.2 rounded-full text-[10px] font-extrabold bg-amber-500 text-black">0</span>
+                </button>
+
+                <!-- Cart Button -->
+                <button onclick="openCartModal()" class="relative p-2.5 rounded-xl glass hover:border-amber-500/40 text-zinc-200 transition-all" aria-label="Giỏ hàng">
+                    <i data-lucide="shopping-bag" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-400"></i>
+                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-amber-500 text-black text-[10px] font-extrabold flex items-center justify-center shadow">0</span>
+                </button>
+
+                <!-- Quick CTA -->
+                <a href="#packages" class="btn-gold px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5">
+                    <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
+                    <span>Nâng Cấp Ngay</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= LIVE SOCIAL PROOF TICKER ================= -->
+    <div class="relative z-10 border-b border-white/[0.06] bg-white/[0.015]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2.5 text-zinc-300">
+                <span class="relative flex h-2.5 w-2.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                </span>
+                <span class="font-semibold text-emerald-400">Hệ thống tự động 24/7:</span>
+                <span id="live-ticker-text" class="text-zinc-300 truncate max-w-[260px] sm:max-w-md">Khách hàng <strong>Minh Anh</strong> vừa kích hoạt <strong>Gói Vĩnh Viễn (200.000đ)</strong> thành công!</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-4 text-zinc-400 font-medium">
+                <span class="flex items-center gap-1.5"><i data-lucide="shield-check" class="w-3.5 h-3.5 text-amber-400"></i> Bảo hành 1 đổi 1</span>
+                <span class="flex items-center gap-1.5"><i data-lucide="qr-code" class="w-3.5 h-3.5 text-amber-400"></i> VietQR MB Bank</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative z-10 pt-10 pb-16 sm:pt-16 sm:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Left Column: Value Proposition -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-amber-500/30 text-xs font-bold text-amber-300">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+                        <span>NÂNG CẤP CHÍNH CHỦ • KHÔNG CẦN MẬT KHẨU</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12] text-white">
+                        Mở Khóa Đặc Quyền <br class="hidden sm:block">
+                        <span class="text-gold-gradient">Locket Gold VIP</span> <br class="hidden sm:block">
+                        Quay Video 30s & 60s
+                    </h1>
+
+                    <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Nâng cấp trực tiếp lên tài khoản cá nhân của bạn chỉ trong <span class="text-white font-semibold">30 giây</span>. Thoải mái <span class="text-amber-400 font-semibold">quay video 30s & 60s HD</span>, đăng ảnh từ thư viện không giới hạn, xóa sạch quảng cáo và sở hữu huy hiệu vương miện Gold độc quyền.
+                    </p>
+
+                    <!-- Price Pill Preview -->
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+                        <div class="px-3.5 py-2 rounded-xl glass text-xs font-semibold text-zinc-300 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+                            <span>1 Ngày: <strong class="text-white">10.000đ</strong></span>
+                        </div>
+                        <div class="px-3.5 py-2 rounded-xl glass text-xs font-semibold text-zinc-300 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                            <span>1 Tháng: <strong class="text-white">79.000đ</strong></span>
+                        </div>
+                        <div class="px-3.5 py-2 rounded-xl glass border border-amber-500/40 text-xs font-semibold text-amber-300 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            <span>Vĩnh Viễn: <strong class="text-amber-400">200.000đ</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+                        <a href="#packages" class="w-full sm:w-auto btn-gold px-7 py-4 rounded-2xl text-sm sm:text-base flex items-center justify-center gap-2.5">
+                            <span>Chọn Gói Nâng Cấp Ngay</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <button onclick="openCheckoutModal('pkg-lifetime')" class="w-full sm:w-auto px-6 py-4 rounded-2xl glass hover:bg-white/[0.06] border border-white/15 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
+                            <span>Mua Nhanh Gói Vĩnh Viễn</span>
+                        </button>
+                    </div>
+
+                    <!-- Trust Metrics -->
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-white/[0.08] max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-white">15.800+</div>
+                            <div class="text-xs text-zinc-400 mt-0.5">Tài khoản kích hoạt</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-amber-400">30 Giây</div>
+                            <div class="text-xs text-zinc-400 mt-0.5">Xử lý tự động 24/7</div>
+                        </div>
+                        <div>
+                            <div class="text-xl sm:text-2xl font-extrabold text-emerald-400">100%</div>
+                            <div class="text-xs text-zinc-400 mt-0.5">Giữ nguyên bạn bè</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive 3D Locket Gold Membership Card -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div id="hero-3d-wrapper" class="w-full max-w-[410px] perspective-1000 animate-float">
+                        <div id="hero-3d-card" class="vip-card-3d rounded-[30px] p-6 sm:p-7 relative overflow-hidden select-none">
+                            <!-- Decorative Glossy Reflection -->
+                            <div class="absolute -top-24 -right-24 w-56 h-56 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
+                            <div class="absolute -bottom-24 -left-24 w-56 h-56 bg-purple-500/15 rounded-full blur-2xl pointer-events-none"></div>
+
+                            <!-- Card Top Header -->
+                            <div class="flex items-center justify-between mb-6 relative z-10">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center shadow-lg shadow-amber-500/30">
+                                        <i data-lucide="crown" class="w-5 h-5 text-black fill-black/20"></i>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-extrabold tracking-wider text-amber-400 uppercase block">LOCKET GOLD</span>
+                                        <span class="text-[11px] text-zinc-400 font-medium">Official VIP Membership</span>
+                                    </div>
+                                </div>
+                                <span class="px-2.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-[10px] font-extrabold tracking-wide">
+                                    ● ACTIVE VIP
+                                </span>
+                            </div>
+
+                            <!-- Simulated Locket App Live Widget -->
+                            <div class="rounded-2xl bg-black/60 border border-white/10 p-4 mb-6 space-y-3 relative z-10">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-400 to-purple-500 p-[1.5px]">
+                                            <div class="w-full h-full rounded-full bg-zinc-900 flex items-center justify-center text-[10px] font-bold text-white">VIP</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-xs font-bold text-white flex items-center gap-1">
+                                                <span>Tài Khoản Chính Chủ</span>
+                                                <i data-lucide="badge-check" class="w-3.5 h-3.5 text-amber-400"></i>
+                                            </div>
+                                            <div class="text-[10px] text-zinc-400">Đã mở khóa full quyền lợi</div>
+                                        </div>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 font-mono text-[10px] font-bold">HD 60FPS</span>
+                                </div>
+
+                                <!-- Video 30s / 60s Progress Bar Simulation -->
+                                <div class="p-3 rounded-xl bg-white/[0.04] border border-white/[0.07] space-y-2">
+                                    <div class="flex items-center justify-between text-[11px]">
+                                        <span class="text-zinc-300 font-semibold flex items-center gap-1.5">
+                                            <span class="w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+                                            Chế độ quay video dài
+                                        </span>
+                                        <span class="font-mono font-bold text-amber-400">30s / 60s UNLOCKED</span>
+                                    </div>
+                                    <div class="w-full h-1.5 rounded-full bg-zinc-800 overflow-hidden">
+                                        <div class="h-full w-full bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 rounded-full"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Mini Perks Badges -->
+                                <div class="grid grid-cols-3 gap-2 pt-1 text-center">
+                                    <div class="py-1.5 px-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                                        <div class="text-[11px] font-bold text-white">Camera Roll</div>
+                                        <div class="text-[9px] text-zinc-400">Đăng ảnh cũ</div>
+                                    </div>
+                                    <div class="py-1.5 px-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                                        <div class="text-[11px] font-bold text-amber-400">No Ads</div>
+                                        <div class="text-[9px] text-zinc-400">Sạch quảng cáo</div>
+                                    </div>
+                                    <div class="py-1.5 px-2 rounded-lg bg-white/[0.03] border border-white/[0.06]">
+                                        <div class="text-[11px] font-bold text-emerald-400">Ai Đã Xem</div>
+                                        <div class="text-[9px] text-zinc-400">Hiện chi tiết</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Footer -->
+                            <div class="flex items-end justify-between relative z-10">
+                                <div>
+                                    <div class="text-[10px] uppercase tracking-widest text-zinc-500 font-semibold">Đơn vị cung cấp</div>
+                                    <div class="font-mono text-xs sm:text-sm font-bold text-zinc-200 mt-0.5">ANH HAO MEDIA • VIETQR</div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[10px] text-zinc-400 block">Chỉ từ</span>
+                                    <span class="text-lg font-extrabold text-gold-gradient">10.000đ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PRICING PACKAGES SECTION ================= -->
+    <section id="packages" class="relative z-10 py-16 sm:py-24 border-t border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Heading -->
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 space-y-3">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-400 text-xs font-bold uppercase tracking-wider">
+                    <i data-lucide="gem" class="w-3.5 h-3.5"></i> Bảng Giá Niêm Yết Chính Thức
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Chọn Gói <span class="text-gold-gradient">Locket Gold Chính Chủ</span>
+                </h2>
+                <p class="text-zinc-400 text-sm sm:text-base">
+                    Tất cả các gói đều nâng cấp trực tiếp trên tài khoản của bạn, mở khóa quay video 30s & 60s và hỗ trợ thanh toán VietQR tự động 24/7.
+                </p>
+
+                <!-- Filter Tabs -->
+                <div class="inline-flex p-1.5 rounded-2xl glass border border-white/10 mt-4">
+                    <button onclick="filterPackages('all')" id="tab-all" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-amber-500 text-black transition-all">
+                        Tất Cả Gói (3)
+                    </button>
+                    <button onclick="filterPackages('ngan-han')" id="tab-ngan-han" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-all">
+                        Trải Nghiệm & Tháng
+                    </button>
+                    <button onclick="filterPackages('vinh-vien')" id="tab-vinh-vien" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-400 hover:text-white transition-all">
+                        Gói Vĩnh Viễn
+                    </button>
+                </div>
+            </div>
+
+            <!-- 3 Pricing Cards Grid -->
+            <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+                <!-- Rendered dynamically by JS -->
+            </div>
+
+            <!-- Promo Code Hint Banner -->
+            <div class="mt-10 p-4 sm:p-5 rounded-2xl glass border border-amber-500/25 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
+                <div class="flex items-center gap-3 text-center sm:text-left">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-400 flex items-center justify-center shrink-0">
+                        <i data-lucide="ticket" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">Ưu Đãi Thành Viên Mới Hôm Nay</h4>
+                        <p class="text-xs text-zinc-400">Nhập mã <span class="font-mono font-bold text-amber-400">VIP20</span> (giảm 20%) hoặc <span class="font-mono font-bold text-purple-400">LOCKET10</span> (giảm 10.000đ) tại bước thanh toán QR.</p>
+                    </div>
+                </div>
+                <button onclick="copyText('VIP20', 'Đã sao chép mã giảm giá VIP20!')" class="px-4 py-2 rounded-xl bg-amber-500/15 hover:bg-amber-500 hover:text-black text-amber-300 border border-amber-500/30 text-xs font-bold transition-all shrink-0">
+                    Copy Mã VIP20
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES GRID SECTION ================= -->
+    <section id="features" class="relative z-10 py-16 sm:py-24 border-t border-white/[0.06] bg-white/[0.01]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Đặc Quyền Độc Quyền</span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold text-white">Tại Sao Nên Nâng Cấp Locket Gold?</h2>
+                <p class="text-zinc-400 text-sm sm:text-base">Trải nghiệm trọn vẹn ứng dụng Locket mà không bị giới hạn tính năng hay làm phiền bởi quảng cáo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="glass rounded-3xl p-6 hover:border-amber-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="video" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Quay Video 30s & 60s Siêu Nét</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Phá vỡ giới hạn 10 giây mặc định, thoải mái quay & gửi video dài 30 giây và 60 giây sắc nét cho bạn bè, người yêu.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass rounded-3xl p-6 hover:border-purple-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/15 text-purple-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="image-plus" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Đăng Ảnh Từ Thư Viện (Roll)</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Chọn bất kỳ bức ảnh đẹp nào có sẵn trong Album điện thoại để đăng thẳng lên màn hình chính của hội bạn thân.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass rounded-3xl p-6 hover:border-emerald-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="eye" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Xem Chi Tiết Ai Đã Xem Ảnh</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Hiển thị đầy đủ danh sách và thời gian chính xác từng người bạn đã xem ảnh hoặc video Locket của bạn.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass rounded-3xl p-6 hover:border-amber-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="ban" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Xóa Sạch 100% Quảng Cáo</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Loại bỏ hoàn toàn banner và quảng cáo xen kẽ khi lướt xem Locket, giúp ứng dụng mượt mà và tiết kiệm pin hơn.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass rounded-3xl p-6 hover:border-sky-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-sky-500/15 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="crown" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Huy Hiệu & Icon Locket Gold</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Sở hữu biểu tượng ứng dụng vàng Gold sang trọng trên màn hình chính cùng huy hiệu VIP nổi bật trong danh sách bạn bè.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass rounded-3xl p-6 hover:border-rose-500/40 transition-all group">
+                    <div class="w-12 h-12 rounded-2xl bg-rose-500/15 text-rose-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-lg font-
